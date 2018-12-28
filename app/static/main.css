@@ -1,0 +1,77 @@
+body{
+	color: white;
+	background-color: black;
+}
+
+.rotor_div{
+	max-width: 700px;
+	height: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.rotor{
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rotor_text{
+	font-size: 28px;
+	max-width: 100px;
+	color: red;
+	font-weight: bold;
+	cursor: pointer;
+}
+.rotor_textarea{
+	height:35px;
+	max-width: 50px;
+	line-height: 28px;
+	text-align: center;
+}
+
+.keyboard_div{
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.keyboard_row{
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.keyboard_col{
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: white;
+	color: black;
+	text-align: center;
+	margin-right: 20px;
+	line-height: 60px;
+	font-size: 28px;
+	cursor: pointer;
+	-webkit-box-shadow:0 0 20px blue; 
+	-moz-box-shadow: 0 0 20px blue; 
+	box-shadow:0 0 20px blue;
+}
+.keyboard_col:hover{
+	-webkit-box-shadow:0 0 35px yellow; 
+	-moz-box-shadow: 0 0 35px yellow; 
+	box-shadow:0 0 35px yellow;	
+}
+
+.r2 {
+	max-width: 730px;
+}
+.r3 {
+	max-width: 660px;
+}
