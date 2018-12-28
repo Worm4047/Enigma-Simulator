@@ -28,7 +28,7 @@ class Enigma:
 	def runMachine(self,inp, flag=True):
 		#inp is in the form of integers
 		curr = inp
-		curr = self.plugBoard.run(curr)
+		# curr = self.plugBoard.run(curr)
 		curr = self.r1.run(curr, flag)
 		curr = self.r2.run(curr, flag)
 		curr = self.r3.run(curr, flag)
@@ -36,7 +36,7 @@ class Enigma:
 		curr = self.r3.run(curr, not flag)
 		curr = self.r2.run(curr, not flag)
 		curr = self.r1.run(curr, not flag)
-		curr = self.plugBoard.run(curr)
+		# curr = self.plugBoard.run(curr)
 		self.moveRotors()
 		# print(curr,self.r1.position, self.r2.position, self.r3.position)
 		return curr
@@ -63,6 +63,26 @@ class Enigma:
 		for item in inp:
 			res += processChar(item)
 		return res
+
+	def replacerotor(self,curr, ids):
+		newRotorNo = randint(0, 4)
+		while newRotorNo == curr or newRotorNo in ids:
+			newRotorNo = randint(0, 4)
+		if curr == self.r1.rotorNo:
+			self.r1 = Rotor(newRotorNo, randint(0,25))
+		elif curr == self.r2.rotorNo:
+			self.r2 = Rotor(newRotorNo, randint(0,25))
+		else:
+			self.r3 = Rotor(newRotorNo, randint(0,25))
+
+	def editrotor(self,curr, value):
+		newRotorVal = value
+		if curr == self.r1.rotorNo:
+			self.r1.position = newRotorVal
+		elif curr == self.r2.rotorNo:
+			self.r2.position = newRotorVal
+		else:
+			self.r3.position = newRotorVal
 
 
 

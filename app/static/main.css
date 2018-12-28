@@ -1,18 +1,21 @@
 body{
 	color: white;
 	background-color: black;
+	overflow: hidden;
 }
 
-.container {
+.container,
+.plugscontainer {
 	max-width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
 	display:flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .headerdiv {
-	margin-top:30px;
+	margin-top:10px;
 	max-width: 1000px;
 	height: 150px;
 	margin-right: auto;
@@ -25,28 +28,28 @@ body{
 
 .headerdiv span{
 	font-size: 48px;
-	height: 70px;
-	line-height: 70px;
+	height: 50px;
+	line-height: 50px;
 }
 .headertext {
-	height: 70px;
+	margin-left: 5px;
+	height: 50px;
 	width: 400px;
 	overflow-x: auto;
 	overflow-y: hidden;
 	background-color: white;
 	border: 1px solid black;
-	font-size:40px;
-	line-height: 70px;
+	font-size:30px;
+	line-height: 50px;
 	color: black;
 	padding:10px;
 	border-radius: 3px;
 }
 
 .headertext span:after {
-  content: '';
-  width: 20px;
+  content: '|';
   height: 2px;
-  background: black;
+
   opacity: 1;
   display: inline-block;
   animation: blink 1s linear infinite alternate;
@@ -70,7 +73,7 @@ body{
 	width: 170px;
 	margin-top: 30px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -86,15 +89,35 @@ body{
 	max-width: 50px;
 	line-height: 28px;
 	text-align: center;
+	font-size: 22px;
 }
 
-.keyboard_div{
+.resetdiv{
+	margin-top: 10px;
+}
+.resetdiv p{
+	color: grey;
+}
+
+.resetbtn{
+	height: 35px;
+	background-color: #b6b6ca;
+	color: black;
+	font-size: 22px;
+	line-height: 30px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.keyboard_div,
+.plug_div{
 	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.keyboard_row{
+.keyboard_row,
+.plug_row{
 	height: 100px;
 	margin-left: auto;
 	margin-right: auto;
@@ -103,7 +126,8 @@ body{
 	align-items: center;
 }
 
-.keyboard_col{
+.keyboard_col,
+.plug{
 	height: 60px;
 	width: 60px;
 	border-radius: 50%;
@@ -129,4 +153,109 @@ body{
 }
 .r3 {
 	max-width: 650px;
+}
+
+footer{
+	max-width:1300px;
+	width:100%;
+	position: absolute;
+	bottom: 4px;
+	font-size: 24px;
+	color:white;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+}
+
+.uparrow,
+.closeplugs{
+	right: 5px;
+	bottom:10px;
+	position: absolute;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+.uparrow:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+.bottom{
+	bottom: -600px;
+	position: absolute;
+}
+
+.closeplugs{
+	top:5px;
+}
+
+.plug_row{
+	height: 150px;
+}
+
+.plugscontainer{
+	text-align: center;
+	max-width:1300px;
+}
+
+.plug_div{
+	max-width: 800px;
+}
+
+.connection_div{
+	width: 300px;
+	margin-top:30px;
+}
+
+.connection_table,
+.connection_table tr,
+.connection_table td,
+.connection_table th{
+	font-size:24px;
+	border: 1px solid white;
+	text-align: center;
+	line-height: 24px;
+	padding:3px;
+}
+.connection_table th {
+	height: 50px;
+}
+
+.plug{
+    border-radius: 2px;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+}
+
+.active{
+	background-color: orange;
+}
+.header{
+	width:1300px;
+	font-size: 48px;
+	height: 50px;
+	line-height: 50px;
 }

@@ -7,6 +7,8 @@ class PlugBoard:
 	plugConnections = []
 
 	def __init__(self):
+		self.plugPoints.clear()
+		self.plugConnections.clear()
 		for i in range(26):
 			self.plugPoints.append(Plug(i))
 

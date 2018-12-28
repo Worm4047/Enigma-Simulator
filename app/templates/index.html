@@ -1,67 +1,130 @@
 <html>
     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EnigmaSim</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
     <body>
     	<div class="container">
     		<div class="headerdiv">
     			<span>Encrypted Text : </span>
-    			<div class="headertext" placeholder="Encrypted Text"><span></span></div>
+    			<div class="headertext" placeholder="Encrypted Text"> <span></span></div>
     		</div>
     	</div>
     	<div class="container">
         <div class="rotor_div">
+          <div class="rotor">
+            <span class="rotor_textarea">Name</span>
+            <span class="rotor_textarea">Pointer</span>
+          </div>
         	<div class="rotor r1">
         		<span class="rotor_text">Rotor </span>
-        		<textarea class="rotor_textarea" rows="1"></textarea>
+        		<input type="text" class="rotor_textarea" rows="1" />
         	</div>
         	<div class="rotor r2">
         		<span class="rotor_text">Rotor </span>
-        		<textarea class="rotor_textarea" rows="1"></textarea>
+        		<input type="text" class="rotor_textarea" rows="1" />
         	</div>
         	<div class="rotor r3">
         		<span class="rotor_text">Rotor </span>
-        		<textarea class="rotor_textarea" rows="1"></textarea>
+        		<input type="text" class="rotor_textarea" rows="1" />
         	</div>
+          <div class="resetdiv">
+            <p>Click on Rotor name to change rotor</p>
+          </div>
         </div>
         <div class="keyboard_div">
         	<div class="keyboard_table">
         		<div class="keyboard_row r1">
-  					<div class="keyboard_col" id="q"> Q </div>
-  					<div class="keyboard_col" id="w"> W </div>
-  					<div class="keyboard_col" id="e"> E </div>
-  					<div class="keyboard_col" id="r"> R </div>
-  					<div class="keyboard_col" id="t"> T </div>
-  					<div class="keyboard_col" id="y"> Y </div>
-  					<div class="keyboard_col" id="u"> U </div>
-  					<div class="keyboard_col" id="i"> I </div>
-  					<div class="keyboard_col" id="o"> O </div>
-  					<div class="keyboard_col" id="p"> P </div>
+    					<div class="keyboard_col" id="q"> Q </div>
+    					<div class="keyboard_col" id="w"> W </div>
+    					<div class="keyboard_col" id="e"> E </div>
+    					<div class="keyboard_col" id="r"> R </div>
+    					<div class="keyboard_col" id="t"> T </div>
+    					<div class="keyboard_col" id="y"> Y </div>
+    					<div class="keyboard_col" id="u"> U </div>
+    					<div class="keyboard_col" id="i"> I </div>
+    					<div class="keyboard_col" id="o"> O </div>
+    					<div class="keyboard_col" id="p"> P </div>
         		</div>
         		<div class="keyboard_row r2">
-  					<div class="keyboard_col" id="a"> A </div>
-  					<div class="keyboard_col" id="s"> S </div>
-  					<div class="keyboard_col" id="d"> D </div>
-  					<div class="keyboard_col" id="f"> F </div>
-  					<div class="keyboard_col" id="g"> G </div>
-  					<div class="keyboard_col" id="h"> H </div>
-  					<div class="keyboard_col" id="j"> J </div>
-  					<div class="keyboard_col" id="k"> K </div>
-  					<div class="keyboard_col" id="l"> L </div>
+    					<div class="keyboard_col" id="a"> A </div>
+    					<div class="keyboard_col" id="s"> S </div>
+    					<div class="keyboard_col" id="d"> D </div>
+    					<div class="keyboard_col" id="f"> F </div>
+    					<div class="keyboard_col" id="g"> G </div>
+    					<div class="keyboard_col" id="h"> H </div>
+    					<div class="keyboard_col" id="j"> J </div>
+    					<div class="keyboard_col" id="k"> K </div>
+    					<div class="keyboard_col" id="l"> L </div>
         		</div>
         		<div class="keyboard_row r3">
-  					<div class="keyboard_col" id="z"> Z </div>
-  					<div class="keyboard_col" id="x"> X </div>
-  					<div class="keyboard_col" id="c"> C </div>
-  					<div class="keyboard_col" id="v"> V </div>
-  					<div class="keyboard_col" id="b"> B </div>
-  					<div class="keyboard_col" id="b"> N </div>
-  					<div class="keyboard_col" id="n"> M </div>
+    					<div class="keyboard_col" id="z"> Z </div>
+    					<div class="keyboard_col" id="x"> X </div>
+    					<div class="keyboard_col" id="c"> C </div>
+    					<div class="keyboard_col" id="v"> V </div>
+    					<div class="keyboard_col" id="b"> B </div>
+    					<div class="keyboard_col" id="n"> N </div>
+    					<div class="keyboard_col" id="m"> M </div>
         		</div>
         	</div>
         </div>
+        <span class="uparrow"><i class="fas fa-arrow-circle-up"></i></span>
     	</div>
+      <div class="plugscontainer bottom">
+        <span class="closeplugs"><i class="far fa-times-circle"></i></span>
+        <div class="header">
+          Plug Connections
+        </div>
+        
+        <div class="content">
+          <div class="plug_div">
+
+            <div class="plug_row r1">
+                <div class="plug" id="q"> Q </div>
+                <div class="plug" id="w"> W </div>
+                <div class="plug" id="e"> E </div>
+                <div class="plug" id="r"> R </div>
+                <div class="plug" id="t"> T </div>
+                <div class="plug" id="y"> Y </div>
+                <div class="plug" id="u"> U </div>
+                <div class="plug" id="i"> I </div>
+                <div class="plug" id="o"> O </div>
+                <div class="plug" id="p"> P </div>
+              </div>
+              <div class="plug_row r2">
+                <div class="plug" id="a"> A </div>
+                <div class="plug" id="s"> S </div>
+                <div class="plug" id="d"> D </div>
+                <div class="plug" id="f"> F </div>
+                <div class="plug" id="g"> G </div>
+                <div class="plug" id="h"> H </div>
+                <div class="plug" id="j"> J </div>
+                <div class="plug" id="k"> K </div>
+                <div class="plug" id="l"> L </div>
+              </div>
+              <div class="plug_row r3">
+                <div class="plug" id="z"> Z </div>
+                <div class="plug" id="x"> X </div>
+                <div class="plug" id="c"> C </div>
+                <div class="plug" id="v"> V </div>
+                <div class="plug" id="b"> B </div>
+                <div class="plug" id="b"> N </div>
+                <div class="plug" id="n"> M </div>
+              </div>
+            </div>
+          </div>
+          <div class="connection_div">
+            <table class="connection_table"><tr><th>Plug Point 1</th><th>Plug Point 2</th></tr></table>
+
+          </div>
+        </div>
+      </div>
+      <footer>
+        By Using the same Rotor Settings, the Cipher message gives back the original message
+        
+      </footer>
 
 		<script
 		  src="{{ url_for('static', filename='jquery.js') }}"
