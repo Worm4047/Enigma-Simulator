@@ -3,17 +3,72 @@ body{
 	background-color: black;
 }
 
-.rotor_div{
-	max-width: 700px;
-	height: 200px;
+.container {
+	max-width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
-	display: flex;
+	display:flex;
 	justify-content: space-between;
 }
 
+.headerdiv {
+	margin-top:30px;
+	max-width: 1000px;
+	height: 150px;
+	margin-right: auto;
+	margin-left: auto;
+	display:flex;
+	justify-content: space-between;	
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.headerdiv span{
+	font-size: 48px;
+	height: 70px;
+	line-height: 70px;
+}
+.headertext {
+	height: 70px;
+	width: 400px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	background-color: white;
+	border: 1px solid black;
+	font-size:40px;
+	line-height: 70px;
+	color: black;
+	padding:10px;
+	border-radius: 3px;
+}
+
+.headertext span:after {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: black;
+  opacity: 1;
+  display: inline-block;
+  animation: blink 1s linear infinite alternate;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rotor_div{
+	max-width: 200px;
+	height: 200px;
+}
+
 .rotor{
-	width: 200px;
+	width: 170px;
+	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -34,7 +89,7 @@ body{
 }
 
 .keyboard_div{
-	max-width: 800px;
+	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -63,7 +118,7 @@ body{
 	-moz-box-shadow: 0 0 20px blue; 
 	box-shadow:0 0 20px blue;
 }
-.keyboard_col:hover{
+.glow{
 	-webkit-box-shadow:0 0 35px yellow; 
 	-moz-box-shadow: 0 0 35px yellow; 
 	box-shadow:0 0 35px yellow;	
@@ -73,5 +128,5 @@ body{
 	max-width: 730px;
 }
 .r3 {
-	max-width: 660px;
+	max-width: 650px;
 }

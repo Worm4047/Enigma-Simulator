@@ -52,13 +52,16 @@ class Enigma:
 				if self.r3.position == 26:
 					self.r3.position = 0
 
-	def processWord(self,inp,flag):
+	def processChar(self, inp):
 		li = 'abcdefghijklmnopqrstuvwxyz'
+		ind = li.index(inp)
+		retInd = self.runMachine(ind)
+		return li[retInd]
+
+	def processWord(self,inp,flag):
 		res = ''
 		for item in inp:
-			ind = li.index(item)
-			retInd = self.runMachine(ind)
-			res += li[retInd]
+			res += processChar(item)
 		return res
 
 

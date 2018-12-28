@@ -4,55 +4,70 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     </head>
     <body>
+    	<div class="container">
+    		<div class="headerdiv">
+    			<span>Encrypted Text : </span>
+    			<div class="headertext" placeholder="Encrypted Text"><span></span></div>
+    		</div>
+    	</div>
+    	<div class="container">
         <div class="rotor_div">
         	<div class="rotor r1">
-        		<span class="rotor_text">Rotor 1</span>
-        		<textarea class="rotor_textarea" rows="1">22</textarea>
+        		<span class="rotor_text">Rotor </span>
+        		<textarea class="rotor_textarea" rows="1"></textarea>
         	</div>
-        	<div class="rotor r1">
-        		<span class="rotor_text">Rotor 2</span>
-        		<textarea class="rotor_textarea" rows="1">2</textarea>
+        	<div class="rotor r2">
+        		<span class="rotor_text">Rotor </span>
+        		<textarea class="rotor_textarea" rows="1"></textarea>
         	</div>
-        	<div class="rotor r1">
-        		<span class="rotor_text">Rotor 3</span>
-        		<textarea class="rotor_textarea" rows="1">12</textarea>
+        	<div class="rotor r3">
+        		<span class="rotor_text">Rotor </span>
+        		<textarea class="rotor_textarea" rows="1"></textarea>
         	</div>
         </div>
         <div class="keyboard_div">
         	<div class="keyboard_table">
         		<div class="keyboard_row r1">
-  					<div class="keyboard_col"> Q </div>
-  					<div class="keyboard_col"> W </div>
-  					<div class="keyboard_col"> E </div>
-  					<div class="keyboard_col"> R </div>
-  					<div class="keyboard_col"> T </div>
-  					<div class="keyboard_col"> Y </div>
-  					<div class="keyboard_col"> U </div>
-  					<div class="keyboard_col"> I </div>
-  					<div class="keyboard_col"> O </div>
-  					<div class="keyboard_col"> P </div>
+  					<div class="keyboard_col" id="q"> Q </div>
+  					<div class="keyboard_col" id="w"> W </div>
+  					<div class="keyboard_col" id="e"> E </div>
+  					<div class="keyboard_col" id="r"> R </div>
+  					<div class="keyboard_col" id="t"> T </div>
+  					<div class="keyboard_col" id="y"> Y </div>
+  					<div class="keyboard_col" id="u"> U </div>
+  					<div class="keyboard_col" id="i"> I </div>
+  					<div class="keyboard_col" id="o"> O </div>
+  					<div class="keyboard_col" id="p"> P </div>
         		</div>
         		<div class="keyboard_row r2">
-  					<div class="keyboard_col"> A </div>
-  					<div class="keyboard_col"> S </div>
-  					<div class="keyboard_col"> D </div>
-  					<div class="keyboard_col"> F </div>
-  					<div class="keyboard_col"> G </div>
-  					<div class="keyboard_col"> H </div>
-  					<div class="keyboard_col"> J </div>
-  					<div class="keyboard_col"> K </div>
-  					<div class="keyboard_col"> L </div>
+  					<div class="keyboard_col" id="a"> A </div>
+  					<div class="keyboard_col" id="s"> S </div>
+  					<div class="keyboard_col" id="d"> D </div>
+  					<div class="keyboard_col" id="f"> F </div>
+  					<div class="keyboard_col" id="g"> G </div>
+  					<div class="keyboard_col" id="h"> H </div>
+  					<div class="keyboard_col" id="j"> J </div>
+  					<div class="keyboard_col" id="k"> K </div>
+  					<div class="keyboard_col" id="l"> L </div>
         		</div>
         		<div class="keyboard_row r3">
-  					<div class="keyboard_col"> Z </div>
-  					<div class="keyboard_col"> X </div>
-  					<div class="keyboard_col"> C </div>
-  					<div class="keyboard_col"> V </div>
-  					<div class="keyboard_col"> B </div>
-  					<div class="keyboard_col"> N </div>
-  					<div class="keyboard_col"> M </div>
+  					<div class="keyboard_col" id="z"> Z </div>
+  					<div class="keyboard_col" id="x"> X </div>
+  					<div class="keyboard_col" id="c"> C </div>
+  					<div class="keyboard_col" id="v"> V </div>
+  					<div class="keyboard_col" id="b"> B </div>
+  					<div class="keyboard_col" id="b"> N </div>
+  					<div class="keyboard_col" id="n"> M </div>
         		</div>
         	</div>
         </div>
+    	</div>
+
+		<script
+		  src="{{ url_for('static', filename='jquery.js') }}"
+		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		  crossorigin="anonymous">
+		</script>
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
     </body>
 </html>
