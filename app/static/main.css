@@ -2,6 +2,8 @@ body{
 	color: white;
 	background-color: black;
 	overflow: hidden;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 300;
 }
 
 .container,
@@ -81,7 +83,7 @@ body{
 	font-size: 28px;
 	max-width: 100px;
 	color: red;
-	font-weight: bold;
+	font-weight: 300;
 	cursor: pointer;
 }
 .rotor_textarea{
@@ -162,7 +164,7 @@ footer{
 	bottom: 4px;
 	font-size: 24px;
 	color:white;
-	font-weight: bold;
+	font-weight: 300;
 	text-decoration: underline;
 	text-align: center;
 }
