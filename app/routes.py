@@ -1,7 +1,7 @@
-from flask import render_template, request, json
-from app import app
+from flask import render_template, request, json, Blueprint
+from app import create_app
 from Enigma import Enigma
-
+app = create_app()
 obj = ''
 r1,r2,r3 = '', '', ''
 p1,p2,p3 = '', '', ''
