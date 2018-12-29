@@ -12,7 +12,6 @@ $(document).ready(function(){
 		let ch = e.key;
 		if(!isAlphaOrParen(ch))
 			return;
-		console.log(ch);
 		$("#" + ch).addClass("glow");
 		setTimeout(function(){ $("#" + ch).removeClass("glow"); }, 200);
 		$.ajax({
@@ -41,7 +40,6 @@ $(document).ready(function(){
 		let id =parseInt($(e.target).attr('id'));
 		var ids = [];
 		$(".rotor").find("span").each(function(){ if(this.id != '') ids.push(parseInt(this.id)); });
-		console.log(id, ids);
 		let data = {'ids' : ids, 'curr' : id}
 		$.ajax({
 		  type : 'POST',
@@ -57,7 +55,6 @@ $(document).ready(function(){
 		if(ch == 'Enter'){
 		    var current = parseInt($(this).val());
 		    let id =parseInt($(e.target).attr('id'));
-		    console.log(current, id);
 		    let data = {'id' : id, 'value' : current}
 			$.ajax({
 			  type : 'POST',
@@ -69,6 +66,47 @@ $(document).ready(function(){
 			}
 
 	});
+
+	$('.scramble').click(function(e){
+		$.ajax({
+			  type : 'GET',
+			  url : "/scramble",
+			  contentType: 'application/json',
+			})
+			.done(updateRotorInfo);		
+	})
+
+	$('.edit').click(function(e){
+		$('.edit').hide();
+		$('.save').show();
+		$('.message').show();
+		$('.plug').attr('contenteditable','true');
+		$('.plug').css("background-color",'white');
+		$('.plug').css("color","black");
+		$('.plug')[0].focus();
+	})
+
+	$('.save').click(function(e){
+		$('.edit').show();
+		$('.save').hide();
+		$('.message').hide();
+		let $plugs = $('.plug');
+		let conns = new Array();
+		for(var i=0;i<10;i++){
+			e1 = $plugs[i].innerText;
+			e2 = $plugs[i+10].innerText;
+			// console.log(e1,e2);
+			conns.push([e1.toLowerCase(),e2.toLowerCase()]);
+		}	
+		data = {"plugconns" : conns};
+		$.ajax({
+			  type : 'POST',
+			  url : "/editplugs",
+			  contentType: 'application/json',
+			  data : JSON.stringify(data)
+			})
+			.done(updateRotorInfo);
+	})
 
 
 	function updateRotorInfo(res){
@@ -82,46 +120,24 @@ $(document).ready(function(){
 	function showPlugsInfo(plugconns){
 		st = 'abcdefghijklmnopqrstuvwxyz';
 		plugconns = JSON.parse(plugconns);
-		console.log(plugconns.length);
-		let $table = $('.connection_table');
+		let $plug_div = $('.plug_div');
+		let $plug_row1 = $('.plug_row.row1');
+		let $plug_row2 = $('.plug_row.row2');
+		$plug_row1.empty();
+		$plug_row2.empty();
 		plugconns.forEach(function(item){
-
-			p1 = st[item[0]];
-			p2 = st[item[1]];
-			e1 = $(`.plug#${p1}`);
-			e2 = $(`.plug#${p2}`);
-			// e1.addClass('active');
-			// e2.addClass('active');
-			let $row = $('<tr></tr>');
-			let $col1 = $('<td></td>');
-			let $col2 = $('<td></td>');
-			$col1.text(p1);
-			$col2.text(p2);
-			$row.append($col1);
-			$row.append($col2);
-			$table.append($row);
+			p1 = st[item[0]].toUpperCase();
+			p2 = st[item[1]].toUpperCase();
+			plug1 = $(`<div class="plug" id="${p1}">${p1}</div>`);
+			plug2 = $(`<div class="plug" id="${p2}">${p2}</div>`);
 			var randomColor = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 			while(randomColor == '#000000')
 				randomColor = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
-			e1.css("background-color",randomColor);
-			e2.css("background-color",randomColor);
-			console.log(p1,p2, randomColor);
-			// h1 = e1.height();
-			// w1 = e1.width();
-			// h2 = e2.height();
-			// w2 = e2.width();
-			// pos1 = e1.position();
-			// pos2 = e2.position();
-			// l1=pos1.left;
-			// l2=pos2.left;
-			// t1=pos1.top;
-			// t2=pos2.top;
-			// p1 = {'x': l1+w1/2, 'y': t1+h1/2};
-			// p2 = {'x': l2+w2/2, 'y': t2+h2/2};
-			// console.log(p1,p2);
-			// $('.plugscontainer').append(`<svg width="500" height="500"><line x1="${p1['x']}" y1="${p1['y']}" x2="${p2['x']}" y2="${p2['y']}" stroke="white"/></svg>`);
-			// return;
-		})
+			plug1.css("background-color",randomColor);
+			plug2.css("background-color",randomColor);
+			$plug_row1.append(plug1);
+			$plug_row2.append(plug2);
+		});
 	}
 
 	function showRotorInfo(rotor, res){

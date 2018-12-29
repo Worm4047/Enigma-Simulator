@@ -203,7 +203,7 @@ footer{
 
 
 .bottom{
-	bottom: -600px;
+	bottom: -800px;
 	position: absolute;
 }
 
@@ -220,8 +220,11 @@ footer{
 	max-width:1300px;
 }
 
-.plug_div{
-	max-width: 800px;
+.plug_div,
+.content {
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .connection_div{
@@ -229,25 +232,13 @@ footer{
 	margin-top:30px;
 }
 
-.connection_table,
-.connection_table tr,
-.connection_table td,
-.connection_table th{
-	font-size:24px;
-	border: 1px solid white;
-	text-align: center;
-	line-height: 24px;
-	padding:3px;
-}
-.connection_table th {
-	height: 50px;
-}
 
 .plug{
     border-radius: 2px;
     height: 80px;
     width: 80px;
     line-height: 80px;
+    color:white;
 }
 
 .active{
@@ -258,4 +249,25 @@ footer{
 	font-size: 48px;
 	height: 50px;
 	line-height: 50px;
+}
+
+.btn{
+	height:50px;
+	width:200px;
+	font-size: 18px;
+	background-color: #000000;
+	border-radius: 3px;
+	color: white;
+	cursor: pointer;
+	margin:5px;
+}
+
+.save{
+	display:none;
+}
+
+.message{
+	color: red;
+    font-size: 20px;
+    display: none;
 }

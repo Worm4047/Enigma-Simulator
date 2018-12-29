@@ -19,7 +19,6 @@ def encrypt():
 		ch=request.json['data']
 		encryptCh = obj.processChar(ch)
 		data = getRotorInfo()
-		print(data)
 		return json.dumps({'ch':encryptCh, 'data':data})
 
 @app.route('/getRotorInfo', methods = ['GET'])
@@ -43,6 +42,31 @@ def editrotor():
 	id =  request.json['id']
 	data = editrotor(id, value)
 	return json.dumps({'data':data})
+
+@app.route('/scramble', methods = ['GET'])
+def scramble():
+	data = scramblePlugs()
+	return json.dumps({'data':data})
+
+
+@app.route('/editplugs', methods = ['POST'])
+def editplugs():
+	plugconns =  request.json['plugconns']
+	data = editplugconns(plugconns)
+	return json.dumps({'data':data})
+
+
+def editplugconns(plugconns):
+	global obj
+	obj.editplugconns(plugconns)
+	return getRotorInfo()
+	
+
+
+def scramblePlugs():
+	global obj
+	obj.scramblePlugs()
+	return getRotorInfo()
 
 def editrotor(id, value):
 	global obj

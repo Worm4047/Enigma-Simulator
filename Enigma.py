@@ -84,6 +84,14 @@ class Enigma:
 		else:
 			self.r3.position = newRotorVal
 
+	def scramblePlugs(self):
+		self.plugBoard = PlugBoard()
+
+	def editplugconns(self,plugconns):
+		self.scramblePlugs()
+		self.plugBoard.editplugconns(plugconns)
+
+
 
 
 

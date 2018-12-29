@@ -35,6 +35,16 @@ class PlugBoard:
 				return item.c1
 		return inp
 
+	def editplugconns(self, plugconns):
+		li = 'abcdefghijklmnopqrstuvwxyz'
+		self.plugConnections.clear()
+		for item in plugconns:
+			print(item[0], item[1])
+			ind1 = li.index(item[0])
+			ind2 = li.index(item[1])
+			self.plugConnections.append(PlugConnection(ind1, ind2, self.plugPoints[ind1], self.plugPoints[ind2]))
+
+
 
 
 
