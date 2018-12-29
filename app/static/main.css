@@ -101,6 +101,8 @@ body{
 	color: grey;
 }
 
+
+
 .resetbtn{
 	height: 35px;
 	background-color: #b6b6ca;
@@ -268,8 +270,23 @@ footer{
 	display:none;
 }
 
-.message{
+.message,
+.message2{
 	color: red;
     font-size: 20px;
-    display: none;
+    
+}
+.message{
+	display: none;
+}
+
+.cleartext {
+	height: 70px;
+    margin-left: 15px;
+}
+
+.btn:hover{
+		-webkit-box-shadow:0 0 10px yellow; 
+	-moz-box-shadow: 0 0 10px yellow; 
+	box-shadow:0 0 10px yellow;	
 }

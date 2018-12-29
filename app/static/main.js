@@ -108,6 +108,9 @@ $(document).ready(function(){
 			.done(updateRotorInfo);
 	})
 
+	$('.cleartext').click(function(e){
+		$('.headertext span').empty();
+	})
 
 	function updateRotorInfo(res){
 		res = JSON.parse(res);
