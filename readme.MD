@@ -38,9 +38,8 @@ Open the simulator again( Yes, that means reload).
 Ensure the same settings are applied to rotors and plugboard i.e click on the rotor name to change it, change the pointer value by editing the value inside the input field. Also, change the plug connections.
 After all, is done, enter the ciphertext again. You will be able to get your original message back.
 <br>
-As an exercise decode this message
-- xrjyzwnvezjs
-<br>
+As an exercise decode this message : xrjyzwnvezjs
+<br />
 Settings:
 - Rotor name = 0,1,2
 - Rotor pointers = 1,2,3
