@@ -40,6 +40,7 @@ After all, is done, enter the ciphertext again. You will be able to get your ori
 <br>
 As an exercise decode this message
 - xrjyzwnvezjs
+<br>
 Settings:
 - Rotor name = 0,1,2
 - Rotor pointers = 1,2,3
